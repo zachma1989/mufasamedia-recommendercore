@@ -1,0 +1,10 @@
+.classpath
+.project
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.wst.common.component
+.settings/org.eclipse.wst.common.project.facet.core.xml
+target/classes/META-INF/MANIFEST.MF
+target/classes/META-INF/maven/org.mufasamedia.recommender/recommender-core/pom.properties
+target/classes/org/
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+target/recommender-core-0.0.1-SNAPSHOT.jar
