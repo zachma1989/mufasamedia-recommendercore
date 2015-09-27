@@ -20,18 +20,20 @@ public class Engine {
 		return "test";
 	}
 
-	public static List<String> getRecommendationList(int userId) {
+	public static List<String> getRecommendationList(int userId, int numberOfRecommendations) {
+		
 		ArrayList<String> result = new ArrayList<String>();
+		
 		try {
 
 			DataModel model = new FileDataModel(
-					new File("/Users/dw/Documents/workspace/mufasamedia-recommendercore/intro.csv"));
+					new File("intro.csv"));
 			UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
 			UserNeighborhood neighborhood = new NearestNUserNeighborhood(2, similarity, model);
 
 			Recommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
 
-			List<RecommendedItem> recommendations = recommender.recommend(userId, 3);
+			List<RecommendedItem> recommendations = recommender.recommend(userId, numberOfRecommendations);
 
 			for (RecommendedItem recommendation : recommendations) {
 				result.add(recommendation.toString());
@@ -51,7 +53,7 @@ public class Engine {
 		try {
 
 			DataModel model = new FileDataModel(
-					new File("/Users/dw/Documents/workspace/mufasamedia-recommendercore/intro.csv"));
+					new File("intro.csv"));
 			UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
 			UserNeighborhood neighborhood = new NearestNUserNeighborhood(2, similarity, model);
 
